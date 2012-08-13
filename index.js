@@ -6,7 +6,7 @@ app.get('/', function(request, response) {
         response.send('Hello hello 3!');
         });
 
-//app.engine('.html', require('jade'));
+app.engine('.html', require('ejs').renderFile);
 
 var port = process.env.PORT || 5000;
 
