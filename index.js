@@ -3,10 +3,8 @@ var express = require('express');
 var app = express.createServer(express.logger());
 
 app.get('/', function(request, response) {
-        response.send('Hello hello 3!');
+        response.render('index.ejs', {layout:false});
         });
-
-app.engine('.html', require('ejs').renderFile);
 
 var port = process.env.PORT || 5000;
 
