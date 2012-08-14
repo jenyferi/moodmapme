@@ -5,11 +5,7 @@ var app = express();
 var port = process.env.PORT || 5000;
 
 app.get('/', function(request, response) {
-    response.render('index.ejs', {});
-});
-
-app.get('/js', function(request, response) {
-    require('./js');
+    response.redirect('/views/index.ejs');
 });
 
 app.listen(port, function() {
