@@ -5,8 +5,13 @@ var app = express();
 var port = process.env.PORT || 5000;
 
 app.get('/', function(request, response) {
-    response.redirect('/views/index.ejs');
+    response.render('index.ejs', {});
 });
+
+app.use('/js', express.static(__dirname + '/js'));
+app.use('/css', express.static(__dirname + '/css'));
+app.use('/ui', express.static(__dirname + '/ui'));
+app.use('/themes', express.static(__dirname + '/themes'));
 
 app.listen(port, function() {
            console.log("Listening on " + port);
