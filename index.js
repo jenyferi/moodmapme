@@ -9,8 +9,8 @@ app.get('/', function(request, response) {
 });
 
 app.get('/js', function(request, response) {
-        response.render('/js', {});
-        });
+    require('./js');
+});
 
 app.listen(port, function() {
            console.log("Listening on " + port);
