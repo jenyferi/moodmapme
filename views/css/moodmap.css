@@ -1,0 +1,96 @@
+body {
+    padding-top: 100px; /* 60px to make the container go all the way to the bottom of the topbar */
+}
+
+/*bootstrap customizations*/
+.navbar-inner {
+    background-image: -moz-linear-gradient(top, #ffffff, #eeeeee);
+    background-image: -ms-linear-gradient(top, #ffffff, #eeeeee);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#eeeeee));
+    background-image: -webkit-linear-gradient(top, #ffffff, #eeeeee);
+    background-image: -o-linear-gradient(top, #ffffff, #eeeeee);
+    background-image: linear-gradient(top, #ffffff, #eeeeee);
+}
+
+.navbar .nav .active > a,
+.navbar .nav .active > a:hover {
+    color: #777777;
+    background-color: #eeeeee;
+}
+
+.hero-unit {
+    background-color: #efefef;
+    border: 2px solid #ffcccc;
+}
+
+.btn {
+    border-color: #cccccc;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary {
+    background-color: #cccccc;
+    *background-color: #ffcccc;
+    background-image: -ms-linear-gradient(top, #ff9999, #ffcccc);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ff9999), to(#ffcccc));
+    background-image: -webkit-linear-gradient(top, #ff9999, #ffcccc);
+    background-image: -o-linear-gradient(top, #ff9999, #ffcccc);
+    background-image: -moz-linear-gradient(top, #ff9999, #ffcccc);
+    background-image: linear-gradient(top, #ff9999, #ffcccc);
+    background-repeat: repeat-x;
+    border-color: #ffcccc #ffcccc #cccccc;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1);
+    filter: progid:dximagetransform.microsoft.gradient(startColorstr='#ff9999', endColorstr='#ffcccc', GradientType=0);
+    filter: progid:dximagetransform.microsoft.gradient(enabled=false);
+}
+
+.btn:hover,
+.btn:active,
+.btn.active,
+.btn.disabled,
+.btn[disabled] {
+    background-color: #ffcccc;
+    *background-color: #d9d9d9;
+}
+
+/*end bootstrap customizations*/
+
+#slider {
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+    margin-top: 50px;
+}
+
+.hero-unit {
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+p, h1 {
+    text-align: center;
+}
+
+.faces {
+    margin-top: 10px;
+}
+
+#frown-face {
+    position: absolute;
+    margin-left: 7%;
+    font-weight: normal;
+    font-size: 25pt;
+}
+
+#smiley-face {
+    position: absolute;
+    margin-left: 41%;
+    font-weight: normal;
+    font-size: 25pt;
+}
+
+#map-btn {
+    margin-top: 70px;
+    margin-left: 80%;
+}
