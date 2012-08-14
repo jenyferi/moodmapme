@@ -8,6 +8,10 @@ app.get('/', function(request, response) {
     response.render('index.ejs', {});
 });
 
+app.get('/js', function(request, response) {
+        response.render('/js', {});
+        });
+
 app.listen(port, function() {
            console.log("Listening on " + port);
            });
