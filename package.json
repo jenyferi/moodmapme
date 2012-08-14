@@ -3,7 +3,8 @@
     "version": "0.0.1",
     "dependencies": {
         "pg": "0.5.4",
-        "express": "latest"
+        "express": "3.x"
+        "ejs": "1.x"
     },
     "engines": {
         "node": "0.8.x",
