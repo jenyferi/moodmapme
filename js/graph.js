@@ -13,7 +13,12 @@ $(function() {
 		console.log(slidervalue);
 					 
 		data_array.push(slidervalue);
-		d3data();
+        
+        $.post("/test", {hello: 'world'}, function(content) {
+            alert("Data Loaded: " + content);
+        });
+		
+        d3data();
 	});
 });
 
