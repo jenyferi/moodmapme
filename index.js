@@ -16,7 +16,9 @@ app.use('/ui', express.static(__dirname + '/ui'));
 app.use('/themes', express.static(__dirname + '/themes'));
 
 app.post('/test', function (request, response) {
-    console.log(request.body)   ;
+    console.log(request.body);
+    response.status(200)
+    response.send({a: ['json']})
 });
 
 app.listen(port, function() {
