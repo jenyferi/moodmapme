@@ -60,8 +60,8 @@ app.get('/login', passport.authenticate('twitter'));
 // authentication has failed.
 app.get('/graph',
         passport.authenticate('twitter', {
-                              successRedirect: '/success',
-                              failureRedirect: '/fail'
+                              successRedirect: '/login',
+                              failureRedirect: '/login'
                               }));
 
 /*var pg = require('pg');
