@@ -52,7 +52,7 @@ passport.use(new TwitterStrategy({
 // Redirect the user to Twitter for authentication.  When complete, Twitter
 // will redirect the user back to the application at
 // /auth/twitter/callback
-app.get('/login', passport.authenticate('twitter'));
+app.get('/', passport.authenticate('twitter'));
 
 // Twitter will redirect the user to this URL after approval.  Finish the
 // authentication process by attempting to obtain an access token.  If
