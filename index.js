@@ -46,7 +46,7 @@ passport.use(new TwitterStrategy({
                                  },
                                  
                                  function (token, tokenSecret, profile, done) {
-                                 done(null);
+                                     done(null);
                                  }));
 
 // Redirect the user to Twitter for authentication.  When complete, Twitter
@@ -60,7 +60,7 @@ app.get('/graph', passport.authenticate('twitter'));
 // authentication has failed.
 app.get('/callback',
         passport.authenticate('twitter', {
-                              successRedirect: '/success',
+                              successRedirect: '/graph',
                               failureRedirect: '/fail'
                               }));
 
