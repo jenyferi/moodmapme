@@ -42,7 +42,7 @@ app.listen(port, function () {
 passport.use(new TwitterStrategy({
                                  consumerKey: process.env.TWITTER_CONSUMER_KEY,
                                  consumerSecret: process.env.TWITTER_CONSUMER_SECRET,
-                                 callbackURL: "http://www.moodmap.me/map"
+                                 callbackURL: "http://www.moodmap.me/callback"
                                  },
                                  
                                  function (token, tokenSecret, profile, done) {
@@ -52,16 +52,16 @@ passport.use(new TwitterStrategy({
 // Redirect the user to Twitter for authentication.  When complete, Twitter
 // will redirect the user back to the application at
 // /auth/twitter/callback
-app.get('/', passport.authenticate('twitter'));
+app.get('/graph', passport.authenticate('twitter'));
 
 // Twitter will redirect the user to this URL after approval.  Finish the
 // authentication process by attempting to obtain an access token.  If
 // access was granted, the user will be logged in.  Otherwise,
 // authentication has failed.
-app.get('/map',
+app.get('/callback',
         passport.authenticate('twitter', {
-                              successRedirect: '/success',
-                              failureRedirect: '/fail'
+                              successRedirect: '/graph',
+                              failureRedirect: '/graph'
                               }));
 
 /*var pg = require('pg');
