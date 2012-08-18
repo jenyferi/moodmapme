@@ -33,11 +33,11 @@ var oa = new OAuth(
    process.env.TWITTER_CONSUMER_KEY,
    process.env.TWITTER_CONSUMER_SECRET,
    "1.0",
-   "http://moodmap.me/graph",
+   "http://moodmap.me/callback",
    "HMAC-SHA1"
 );
 
-app.get('/', function(req, res){
+app.get('/graph', function(req, res){
     oa.getOAuthRequestToken(function(error, oauth_token, oauth_token_secret, results){
         if (error) {
             console.log(error);
@@ -54,7 +54,7 @@ app.get('/', function(req, res){
     });
 });
 
-app.get('/graph', function(req, res, next){
+app.get('/callback', function(req, res, next){
     if (req.session.oauth) {
         req.session.oauth.verifier = req.query.oauth_verifier;
         var oauth = req.session.oauth;
