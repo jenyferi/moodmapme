@@ -46,10 +46,11 @@ passport.use(new TwitterStrategy({
                                  },
                                  
                                  function (token, tokenSecret, profile, done) {
-                                     function (err, user) {
+                                     /*function (err, user) {
                                          if (err) { return done(err); }
                                          done(null, user);
-                                     }
+                                     }*/
+                                     done(null);
                                  }));
 
 // Redirect the user to Twitter for authentication.  When complete, Twitter
