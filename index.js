@@ -29,10 +29,10 @@ app.get('/', function (request, response) {
 
 app.post('/test', function (request, response) {
          console.log(request.body);
-         response.status(200)
+         response.status(200);
          response.send({
                        a: ['json']
-                       })
+                       });
          });
 
 app.listen(port, function () {
@@ -46,7 +46,10 @@ passport.use(new TwitterStrategy({
                                  },
                                  
                                  function (token, tokenSecret, profile, done) {
-                                     done(null);
+                                     function (err, user) {
+                                         if (err) { return done(err); }
+                                         done(null, user);
+                                     }
                                  }));
 
 // Redirect the user to Twitter for authentication.  When complete, Twitter
@@ -64,12 +67,13 @@ app.get('/callback',
                               failureRedirect: '/fail'
                               }));
 
-/*var pg = require('pg');
+var pg = require('pg');
  
- pg.connect(process.env.DATABASE_URL, function(err, client) {
- var query = client.query('SELECT * FROM your_table');
+pg.connect(process.env.DATABASE_URL, function(err, client) {
+    console.log('pg connected');
+    //var query = client.query('SELECT * FROM your_table');
  
- query.on('row', function(row) {
- console.log(JSON.stringify(row));
- });
- });*/
+    //query.on('row', function(row) {
+    //console.log(JSON.stringify(row));
+    //});
+});
