@@ -74,8 +74,7 @@ app.get('/callback',
 var pg = require('pg');
  
 pg.connect(process.env.DATABASE_URL, function(err, client) {
-    console.log('pg connected');
-           var query = client.query('INSERT INTO products (test_data) VALUES (' + );
+    var query = client.query('INSERT INTO products (test_data) VALUES (' + moodnumber);
  
     //query.on('row', function(row) {
     //console.log(JSON.stringify(row));
