@@ -4,8 +4,8 @@
     "dependencies": {
         "pg": "0.8.2",
         "express": "3.0",
-        "ejs": "0.8.x"
-        "passport": "0.1.12"
+        "ejs": "0.8.x",
+        "passport": "0.1.12",
         "passport-twitter": "0.1.4"
     },
     "engines": {
