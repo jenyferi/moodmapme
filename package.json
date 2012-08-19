@@ -2,7 +2,7 @@
     "name": "node-example",
     "version": "0.0.1",
     "dependencies": {
-        "pg": "0.5.4",
+        "pg": "0.8.2",
         "express": "3.x",
         "ejs": "0.8.x"
     },
