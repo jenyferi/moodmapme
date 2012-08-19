@@ -27,8 +27,11 @@ app.get('/', function (request, response) {
         response.render('index.ejs', {});
         });
 
+var moodnumber;
+
 app.post('/test', function (request, response) {
-         console.log(request.body);
+         moodnumber = request.body;
+         console.log(moodnumber);
          response.status(200);
          response.send({
                        a: ['json']
@@ -72,7 +75,7 @@ var pg = require('pg');
  
 pg.connect(process.env.DATABASE_URL, function(err, client) {
     console.log('pg connected');
-    //var query = client.query('SELECT * FROM your_table');
+           var query = client.query('INSERT INTO products (test_data) VALUES (' + );
  
     //query.on('row', function(row) {
     //console.log(JSON.stringify(row));
