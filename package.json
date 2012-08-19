@@ -3,7 +3,7 @@
     "version": "0.0.1",
     "dependencies": {
         "pg": "0.8.2",
-        "express": "3.0.0",
+        "express": "3.0.x",
         "ejs": "0.8.2",
         "passport": "0.1.12",
         "passport-twitter": "0.1.4"
