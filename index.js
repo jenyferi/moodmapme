@@ -35,7 +35,7 @@ var pgclient = new pg.Client(process.env.DATABASE_URL);
 pgclient.connect();
 
 app.post('/test', function (request, response) {
-         var moodnumber = parseInt(request.body);
+         var moodnumber = request.body.value;
          console.log(moodnumber);
          response.status(200);
          response.send({

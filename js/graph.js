@@ -18,7 +18,7 @@ $(function () {
                      data_array.push(slidervalue);
                      
                      $.post("/test", {
-                            hello: 'world'
+                            value: slidervalue
                             }, function (content) {
                             alert("Data Loaded: " + content);
                             });
