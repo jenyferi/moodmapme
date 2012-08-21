@@ -72,11 +72,11 @@ app.get('/callback',
                               }));
 
 var pg = require('pg');
- 
-pg.connect(process.env.DATABASE_URL, function(err, client) {
-    var query = client.query('INSERT INTO products (test_data) VALUES (' + moodnumber);
- 
-    //query.on('row', function(row) {
-    //console.log(JSON.stringify(row));
-    //});
-});
+
+pg.connect(process.env.DATABASE_URL, function (err, client) {
+           var query = client.query('SELECT * FROM test_data');
+           
+           query.on('row', function (row) {
+                    console.log(JSON.stringify(row));
+                    });
+           });
