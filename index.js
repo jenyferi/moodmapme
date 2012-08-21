@@ -27,15 +27,27 @@ app.get('/', function (request, response) {
         response.render('index.ejs', {});
         });
 
-var moodnumber;
+
+var pg = require('pg');
+
+var pgclient = new pg.Client(process.env.DATABASE_URL);
+
+pgclient.connect();
 
 app.post('/test', function (request, response) {
-         moodnumber = request.body;
+         var moodnumber = request.body;
          console.log(moodnumber);
          response.status(200);
          response.send({
                        a: ['json']
                        });
+         
+         pgclient.query('INSERT INTO test_data VALUES($1)', [moodnumber]);
+         var query = pgclient.query('SELECT * FROM test_data');
+         
+         query.on('row', function (row) {
+                  console.log("hello" + JSON.stringify(row));
+                  });
          });
 
 app.listen(port, function () {
@@ -71,12 +83,4 @@ app.get('/callback',
                               failureRedirect: '/fail'
                               }));
 
-var pg = require('pg');
 
-pg.connect(process.env.DATABASE_URL, function (err, client) {
-           var query = client.query('SELECT * FROM test_data');
-           
-           query.on('row', function (row) {
-                    console.log("hello" + JSON.stringify(row));
-                    });
-           });
