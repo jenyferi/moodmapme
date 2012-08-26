@@ -23,7 +23,7 @@ $(function () {
                             alert("Data Loaded: " + content);
                             });
                      
-                     d3data();
+                     //d3data();
                      });
   });
 

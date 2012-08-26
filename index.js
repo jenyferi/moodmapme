@@ -49,7 +49,7 @@ app.post('/test', function(request, response) {
   var query = pgclient.query('SELECT * FROM test_data');
 
   query.on('row', function(row) {
-    console.log("hello" + JSON.stringify(row));
+    console.log("hello" + JSON.stringify(row.mood_number));
   });
 });
 
