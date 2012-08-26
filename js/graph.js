@@ -20,9 +20,10 @@ $(function () {
                      $.post("/test", {
                             value: slidervalue
                             }, function (content) {
-                            alert("Data Loaded: " + content);
+                            //alert("Data Loaded: " + content);
                             });
                      
+                     $.get("/test", function (data) {console.log("from database " + data);})
                      //d3data();
                      });
   });
