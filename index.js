@@ -62,13 +62,11 @@ passport.use(new TwitterStrategy({
   consumerSecret: process.env.TWITTER_CONSUMER_SECRET,
   callbackURL: "http://www.moodmap.me/callback"
 },
-
 function(token, tokenSecret, profile, done) {
-  /*function (err, user) {
-                                         if (err) { return done(err); }
-                                         done(null, user);
-                                     }*/
-  done(null);
+  User.findOrCreate(twitterID: profile.id, function (err, user) {
+    if (err) { return done(err); }
+    done(null, user);
+  });
 }));
 
 // Redirect the user to Twitter for authentication.  When complete, Twitter
