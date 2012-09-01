@@ -63,10 +63,7 @@ passport.use(new TwitterStrategy({
   callbackURL: "http://www.moodmap.me/callback"
 },
 function(token, tokenSecret, profile, done) {
-  console.log({twitterID: profile.id}, function (err, user) {
-    if (err) { return done(err); }
-    done(null, user);
-  });
+  console.log({twitterID: profile.id});
 }));
 
 // Redirect the user to Twitter for authentication.  When complete, Twitter
