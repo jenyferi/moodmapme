@@ -63,7 +63,7 @@ passport.use(new TwitterStrategy({
   callbackURL: "http://www.moodmap.me/callback"
 },
 function(token, tokenSecret, profile, done) {
-  User.findOrCreate(twitterID: profile.id, function (err, user) {
+  User.findOrCreate({twitterID: profile.id}, function (err, user) {
     if (err) { return done(err); }
     done(null, user);
   });
