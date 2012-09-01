@@ -64,6 +64,7 @@ passport.use(new TwitterStrategy({
 },
 function(token, tokenSecret, profile, done) {
   console.log({twitterID: profile.id});
+  done(null, null)
 }));
 
 // Redirect the user to Twitter for authentication.  When complete, Twitter
