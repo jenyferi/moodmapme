@@ -20,12 +20,17 @@ $(function () {
                             //alert("Data Loaded: " + content);
                             });
                      
-                     $.get({"test2", {
-                        context: this
-                        }, function(data) {
+                     $.ajax({
+                        type: "GET",
+                        url: "/test2",
+                        context: this,
+                        success: function(data) {
                           console.log(data);
                           //d3data(data);
-                        });
+                        }
+                     });
+
+                     });
   });
 
 function d3data(data) {
