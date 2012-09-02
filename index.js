@@ -76,7 +76,7 @@ app.post('/test2', function(request, response) {
 
 //TWITTER STUFF
 //
-passport.use(new TwitterStrategy({
+/*passport.use(new TwitterStrategy({
   consumerKey: process.env.TWITTER_CONSUMER_KEY,
   consumerSecret: process.env.TWITTER_CONSUMER_SECRET,
   callbackURL: "http://www.moodmap.me/callback"
@@ -89,7 +89,7 @@ function(token, tokenSecret, profile, done) {
   /*function (err, user) {
                                          if (err) { return done(err); }
                                          done(null, user);
-                                     }*/
+                                     }*//*
   done(null);
 }));
 
@@ -98,4 +98,4 @@ app.get('/graph', passport.authenticate('twitter'));
 app.get('/callback', passport.authenticate('twitter', {
   successRedirect: '/graph',
   failureRedirect: '/fail'
-}));
+}));*/
