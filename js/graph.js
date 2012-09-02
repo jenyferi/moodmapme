@@ -24,7 +24,9 @@ $(function () {
                         type: "GET",
                         url: "/test2",
                         context: this,
-                        success: d3data(data)
+                        success: function(data) {
+                          d3data(data);
+                        }
                      })
                      //d3data();
                      });
