@@ -26,8 +26,6 @@ $(function () {
                           console.log(data);
                           //d3data(data);
                         });
-                     //d3data();
-                     });
   });
 
 function d3data(data) {
