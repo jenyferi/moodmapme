@@ -1,5 +1,4 @@
 var svg;
-var data_array = new Array();
 
 window.onload = function () {
     svg = d3.select("body").append("svg").attr("width", "100%").attr("height", "100%");
@@ -14,21 +13,27 @@ $(function () {
   $("#map-btn").bind("click", function () {
                      var slidervalue = $("#slider").slider("value");
                      console.log(slidervalue);
-                     
-                     data_array.push(slidervalue);
-                     
+                                          
                      $.post("/test", {
                             value: slidervalue
                             }, function (content) {
                             //alert("Data Loaded: " + content);
                             });
                      
-                     $.get("/test", function (data) {console.log("from database " + data);})
+                     $.ajax({
+                        type: "GET",
+                        url: "/test2",
+                        context: this,
+                        success: d3data(data)
+                     })
                      //d3data();
                      });
   });
 
-function d3data() {
+function d3data(data) {
+    console.log ("from database " + data);
+
+    /*
     var dataEnter = svg.selectAll("circle").data(data_array).enter();
     
     var barcolor = "ffcccc";
@@ -78,4 +83,5 @@ function d3data() {
                                   }).attr("x", function (d, i) {
                                           return i * horizontalBarDistance + textXOffset;
                                           }).attr("y", textYPosition).style("fill", textcolor);
+*/
 }

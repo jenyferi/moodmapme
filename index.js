@@ -59,6 +59,14 @@ app.post('/test', function(request, response) {
   });
 
   pgclient.query('INSERT INTO test_data VALUES($1)', [moodnumber]);
+});
+
+app.post('/test2', function(request, response) {
+  response.status(200);
+  response.send({
+    a: ['json']
+  });
+
   var query = pgclient.query('SELECT * FROM test_data');
 
   query.on('row', function(row) {
