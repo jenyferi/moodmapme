@@ -25,7 +25,8 @@ $(function () {
                         url: "/test2",
                         context: this,
                         success: function(data) {
-                          d3data(data);
+                          console.log(data);
+                          //d3data(data);
                         }
                      })
                      //d3data();

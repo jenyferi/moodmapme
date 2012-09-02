@@ -62,15 +62,11 @@ app.post('/test', function(request, response) {
 });
 
 app.post('/test2', function(request, response) {
-  response.status(200);
-  response.send({
-    a: ['json']
-  });
-
   var query = pgclient.query('SELECT * FROM test_data');
 
   query.on('row', function(row) {
     console.log(JSON.stringify(row.mood_number));
+    response.json(200, row.mood_number)
   });
 });
 
